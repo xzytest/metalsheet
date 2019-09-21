@@ -15,6 +15,9 @@ public class MetalSheet {
 		this.dimN = dimN;
 		this.xCosts = xCosts;
 		this.yCosts = yCosts;
+		
+		this.xCosts.sort(Collections.reverseOrder());
+		this.yCosts.sort(Collections.reverseOrder());
 	}
 
 	public int minCuttingCost() {
@@ -27,9 +30,6 @@ public class MetalSheet {
 		int amountOfCuttingM = 1;
 		int amountOfCuttingN = 1;
 		boolean end = false;
-		
-		xCosts.sort(Collections.reverseOrder());
-		yCosts.sort(Collections.reverseOrder());
 		
 		while (end == false) {
 			if (stepX < tempDimM && stepY == tempDimN) {
